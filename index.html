@@ -50,14 +50,15 @@
 <body>
     <div class="box">
         <div class="header">THỜI GIAN MUA X ĐÃ TRÔI QUA</div>
-        <div class="info">Từ ngày: <strong>17/06/2025</strong></div>
+        <div class="info">Từ ngày: <strong>17/06/2025 00:00:00</strong></div>
         <div class="info">Đến nay: <strong id="current-date">Đang tải...</strong></div>
         <div class="info">&nbsp;</div>
-        <div class="total" id="total-time">Tổng thời gian: <span>Đang tính...</span></div>
-        <div class="note" id="note-time">(Tương đương: Đang tính...)</
+        <div class="total" id="total-time">Tổng thời gian: <span>4>Đang tính...</span></div>
+        <div class="note" id="note-time">(Tương đương: Đang tính...)</div>
+    </div>
 
     <script>
-        // Ngày bắt đầu mua X
+        // Ngày bắt đầu mua X (00:00:00 giờ Việt Nam)
         const startDate = new Date('2025-06-17T00:00:00');
 
         function updateTime() {
@@ -89,12 +90,12 @@
             document.querySelector('#total-time span').textContent = `${diffDays} ngày, ${diffHours} giờ, ${diffMinutes} phút, ${diffSeconds} giây`;
 
             // Cập nhật note
-            document.getElementById('note-time').textContent = `(Cập nhật realtime theo giờ Việt Nam)`;
+            document.getElementById('note-time').textContent = `(Cập nhật realtime theo giờ Việt Nam - UTC+7)`;
         }
 
         // Cập nhật ngay lập tức và mỗi giây
         updateTime();
         setInterval(updateTime, 1000);
     </script>
-</body
+</body>
 </html>
